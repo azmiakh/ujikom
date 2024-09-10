@@ -209,7 +209,7 @@ h6 {
 /* Navmenu - Desktop */
 @media (min-width: 1200px) {
     .logo img {
-      margin-right: 20px; /* Atau berapa pun jarak yang diinginkan */
+      margin-right: 20px; 
   }
 
   .navmenu {
@@ -779,35 +779,6 @@ section,
   font-weight: 400;
 }
 
-.hero .download-btn {
-  color: var(--contrast-color);
-  background: color-mix(in srgb, var(--accent-color) 90%, black 50%);
-  font-family: var(--heading-font);
-  font-weight: 500;
-  font-size: 15px;
-  padding: 8px 30px 10px 30px;
-  border-radius: 3px;
-  transition: 0.5s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero .download-btn+.download-btn {
-  margin-left: 20px;
-}
-
-.hero .download-btn:hover {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-}
-
-.hero .download-btn i {
-  font-size: 16px;
-  line-height: 0;
-  margin-right: 8px;
-}
-
 @media (max-width: 768px) {
   .hero h2 {
     font-size: 28px;
@@ -820,10 +791,6 @@ section,
     margin-bottom: 30px;
   }
 
-  .hero .download-btn {
-    font-size: 14px;
-    padding: 8px 20px 10px 20px;
-  }
 }
 
 /*--------------------------------------------------------------
@@ -832,21 +799,7 @@ section,
 #about p {
   text-align: justify;
 }
-/*--------------------------------------------------------------
-# Features Section
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Feature Details Section
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Gallery Section
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Testimonials Section
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Pricing Section
---------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 # Faq Section
 --------------------------------------------------------------*/
@@ -994,9 +947,6 @@ section,
   margin: 0;
 }
 
-/*--------------------------------------------------------------
-# Login Section
---------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Starter  Section
 --------------------------------------------------------------*/

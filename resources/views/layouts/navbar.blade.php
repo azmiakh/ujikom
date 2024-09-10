@@ -3,8 +3,6 @@
 
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
         <img src="assets/img/hero-img.png" alt="logo" style="margin-right: 20px;">
         <h1 class="sitename">Cendekia Primary School</h1>
       </a>
@@ -19,7 +17,7 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="">Login</a>
+      <a class="btn-getstarted" href="{{ route('login') }}">Login</a>
 
     </div>
 </header>
