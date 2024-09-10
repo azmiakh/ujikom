@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Models\Peserta;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -21,12 +22,12 @@ class LoginController extends Controller
             'registration_number' => 'required|string',
         ]);
 
-        $credentials = [
-            'name' => $request->input('name'),
-            'registration_number' => $request->input('registration_number'),
-        ];
+        $peserta = Peserta::where('name', $request->input('name'))
+                            ->where('registration_number', $request->input('registration_number'))
+                            ->first();
 
-        if (Auth::attempt($credentials)) {
+        if ($peserta) {
+            Auth::login($peserta);
             return redirect()->intended('dashboard');
         }
 
