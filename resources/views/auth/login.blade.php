@@ -34,6 +34,9 @@
                 </div>
 
                 <button type="submit" class="btn-submit">Submit</button>
+                @if ($errors->has('login_error'))
+                    <p style="color: red;">{{ $errors->first('login_error') }}</p>
+                @endif
             </form>
         </div>
     </div>

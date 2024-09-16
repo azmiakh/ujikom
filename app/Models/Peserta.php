@@ -2,10 +2,27 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Peserta extends Model
+class Peserta extends Authenticatable
 {
-    use HasFactory;
+    use Notifiable;
+
+    protected $fillable = [
+        'name',
+        'registration_number',
+        'tanggal_lahir',
+        'jenis_kelamin',
+        'agama',
+        'alamat_lengkap',
+        'nik',
+        'golongan_darah',
+        'anak_ke',
+        'total_saudara',
+        'foto_terbaru',
+        'akta_kelahiran',
+        'kartu_keluarga',
+        'surat_keterangan',
+    ];
 }

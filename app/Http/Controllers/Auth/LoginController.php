@@ -28,7 +28,7 @@ class LoginController extends Controller
 
         if ($peserta) {
             Auth::login($peserta);
-            return redirect()->intended('dashboard');
+            return redirect()->intended('/form');
         }
 
         return redirect()->back()->withErrors([
