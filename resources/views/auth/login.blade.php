@@ -26,16 +26,24 @@
                 <div class="input-container">
                     <!-- <label for="name">Nama Lengkap</label> -->
                     <input type="text" id="name" name="name" placeholder="Nama Lengkap" required>
+                    @if ($errors->has('name'))
+                        <p style="color: red;">{{ $errors->first('name') }}</p>
+                    @endif
                 </div>
 
                 <div class="input-container">
                     <!-- <label for="registration_number">Nomor Pendaftaran</label> -->
                     <input type="text" id="registration_number" name="registration_number" placeholder="Nomor Pendaftaran" required>
+                    @if ($errors->has('registration_number'))
+                        <p style="color: red;">{{ $errors->first('registration_number') }}</p>
+                    @endif
                 </div>
 
                 <button type="submit" class="btn-submit">Submit</button>
                 @if ($errors->has('login_error'))
-                    <p style="color: red;">{{ $errors->first('login_error') }}</p>
+                    <div class="alert alert-danger">
+                        <strong>Error!</strong> {{ $errors->first('login_error') }}
+                    </div>
                 @endif
             </form>
         </div>

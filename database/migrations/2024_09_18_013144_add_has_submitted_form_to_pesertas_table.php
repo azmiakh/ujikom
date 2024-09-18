@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePesertasTable extends Migration
+class AddHasSubmittedFormToPesertasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreatePesertasTable extends Migration
      */
     public function up()
     {
-        Schema::create('pesertas', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('registration_number')->unique()->nullable(false);
-            $table->timestamps();
+        Schema::table('pesertas', function (Blueprint $table) {
+            $table->boolean('has_submitted_form')->default(false);
         });
     }
 
@@ -28,6 +25,8 @@ class CreatePesertasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pesertas');
+        Schema::table('pesertas', function (Blueprint $table) {
+            $table->dropColumn('has_submitted_form');
+        });
     }
 }

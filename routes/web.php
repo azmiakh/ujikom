@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FormController;
 use App\Http\Controllers\Auth\LoginController;
 
 /*
@@ -13,23 +14,19 @@ use App\Http\Controllers\Auth\LoginController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    $peserta = Auth::user();
+
+    return view('dashboard', compact('peserta'));
+})->name('dashboard');
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 
 Route::middleware('auth')->group(function () {
-    Route::get('/', function () {
-        return view('dashboard');
-    })->name('dashboard');
-
-    Route::get('/form', function () {
-        return view('form');
-    })->name('form');
-
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/form', [FormController::class, 'showForm'])->name('form');
+    Route::post('/submit-form', [FormController::class, 'submitForm'])->name('submit-form');
+    
 });
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-

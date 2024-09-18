@@ -17,7 +17,25 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="{{ route('login') }}">Login</a>
+      @if(Auth::check())
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="">
+          @csrf
+          @method('POST')
+            <a class="btn-getstarted" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+              Logout
+            </a>
+        </form>
+      @else
+        <a class="btn-getstarted" href="{{ route('login') }}">Login</a>
+      @endif
 
     </div>
 </header>
+<script>
+  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+  const navMenu = document.querySelector('#navmenu');
+
+  mobileNavToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('navmenu-active');
+  });
+</script>

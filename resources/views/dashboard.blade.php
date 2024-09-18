@@ -12,8 +12,19 @@
             <img src="assets/img/hero-img.png" class="img-fluid animated hero-logo" alt="Hero Image">
           </div>
           <div class="col-lg-6  d-flex flex-column justify-content-center text-center text-md-start" data-aos="fade-in">
+          @if(Auth::check())
+            <h2>Selamat Datang di Dashboard, {{ Auth::user()->name }}</h2>
+            <p>Anda telah mendaftar sebagai peserta didik baru di Cendekia Primary School.</p>
+
+            
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
+          @else
             <h2>Informasi Seputar Daftar Ulang PPDB 2024</h2>
             <p>Cendekia Primary School</p>
+          @endif
           </div>
         </div>
       </div>

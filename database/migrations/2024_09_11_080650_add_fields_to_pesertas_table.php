@@ -51,7 +51,7 @@ class AddFieldsToPesertasTable extends Migration
                 'foto_terbaru', 
                 'akta_kelahiran', 
                 'kartu_keluarga', 
-                'surat_keterangan'
+                'surat_keterangan',
             ]);
         });
     }

@@ -16,11 +16,26 @@
         <img src="assets/img/hero-img.png" class="logo">
     </div>
     
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <form action="/submit-form" method="POST" enctype="multipart/form-data" onsubmit="printForm(event)">
+        @csrf
         <h2>Formulir Daftar Ulang Peserta Didik Baru Cendekia Primary School</h2><br>
 
-        <label for="nama">Nama Lengkap:</label>
-        <input type="text" id="nama" name="nama_lengkap" required><br><br>
+        <label for="name">Nama Lengkap:</label>
+        <input type="text" id="name" name="name" value="{{ $peserta->name }}" readonly><br><br>
 
         <label for="tgl-lahir">Tanggal Lahir:</label>
         <input type="date" id="tgl-lahir" name="tanggal_lahir" required><br><br>
@@ -45,7 +60,12 @@
         <textarea id="alamat" name="alamat_lengkap" required></textarea><br><br>
 
         <label for="nik">Nomor Induk Kependudukan (NIK):</label>
-        <input type="text" id="nik" name="nik" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 16)" required><br><br>
+        <input type="text" id="nik" name="nik" required><br><br>
+
+        <!-- <input type="text" id="nik" name="nik" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 16)" maxlength="16" required><br><br>
+        @if ($errors->has('nik'))
+            <span class="text-danger">{{ $errors->first('nik') }}</span>
+        @endif -->
 
         <label for="golongan-darah">Golongan Darah:
             <input type="radio" id="golongan-a" name="golongan_darah" value="A" required> A
@@ -95,5 +115,13 @@
         setTimeout(function() {
             event.target.submit();
         }, 1000);
+    }
+    function validateForm() {
+        var nikInput = document.getElementById('nik').value;
+        if (nikInput.length !== 16) {
+            alert('NIK harus berisi tepat 16 digit.');
+            return false;
+        }
+        return true;
     }
 </script>
