@@ -954,3 +954,22 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+.btn-getstarted {
+  margin: 0 15px 0 0;
+  padding: 6px 20px; /* Padding untuk mengatur ruang di dalam tombol */
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  border-radius: 50px;
+  font-size: 14px;
+  transition: 0.3s;
+  display: inline-block; /* Pastikan tombol menjadi inline dan tidak mengisi lebar penuh */
+  max-width: 200px; /* Membatasi lebar maksimum tombol */
+  text-align: center; /* Mengatur teks di tengah */
+  white-space: nowrap; /* Mencegah teks melompat ke baris baru */
+  width: auto; /* Mengatur lebar tombol agar otomatis sesuai dengan teks */
+}
+
+.btn-getstarted:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+  color: var(--contrast-color);
+}

@@ -2,7 +2,7 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
+      <a class="logo d-flex align-items-center me-auto">
         <img src="assets/img/hero-img.png" alt="logo" style="margin-right: 20px;">
         <h1 class="sitename">Cendekia Primary School</h1>
       </a>

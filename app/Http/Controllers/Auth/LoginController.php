@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\Peserta;
+use App\Models\LoginTable;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -28,6 +29,12 @@ class LoginController extends Controller
 
         if ($peserta) {
             Auth::login($peserta);
+
+            LoginTable::create([
+                'name' => $request->input('name'),
+                'nomor_pendaftaran' => $request->input('registration_number'),
+            ]);
+
             return redirect()->intended('/form');
         }
 
@@ -40,5 +47,55 @@ class LoginController extends Controller
     {
         Auth::logout();
         return redirect('/login');
+    }
+
+    public function create()
+    {
+        return view('admin.create-logintable');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'nomor_pendaftaran' => 'required|string|max:255',
+        ]);
+
+        LoginTable::create([
+            'name' => $request->name,
+            'nomor_pendaftaran' => $request->nomor_pendaftaran,
+        ]);
+
+        return redirect()->route('admin.logintables')->with('success', 'Data berhasil ditambahkan');
+    }
+
+    public function edit($id)
+    {
+        $login = LoginTable::findOrFail($id);
+        return view('admin.edit-logintable', compact('login'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'nomor_pendaftaran' => 'required|string|max:255',
+        ]);
+
+        $login = LoginTable::findOrFail($id);
+        $login->update([
+            'name' => $request->name,
+            'nomor_pendaftaran' => $request->nomor_pendaftaran,
+        ]);
+
+        return redirect()->route('admin.logintables')->with('success', 'Data berhasil diperbarui');
+    }
+
+    public function destroy($id)
+    {
+        $login = LoginTable::findOrFail($id);
+        $login->delete();
+
+        return redirect()->route('admin.logintables')->with('success', 'Data berhasil dihapus');
     }
 }

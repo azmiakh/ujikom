@@ -15,10 +15,12 @@ class PesertaSeeder extends Seeder
     public function run()
     {
         //
-        Peserta::create([
-            'name' => 'John Doe',
-            'registration_number' => '123456'
-        ]);
+        Peserta::create(
+        [
+            'name' => 'Mikha',
+            'registration_number' => '111111'
+        ]
+    );
 
     }
 }

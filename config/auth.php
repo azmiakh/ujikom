@@ -40,6 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'pesertas',
         ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
     ],
 
     /*
@@ -68,6 +72,11 @@ return [
         'pesertas' => [
             'driver' => 'eloquent',
             'model' => App\Models\Peserta::class,
+        ],
+
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
         ],
     ],
 

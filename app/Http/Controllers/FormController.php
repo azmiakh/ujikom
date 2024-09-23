@@ -33,10 +33,17 @@ class FormController extends Controller
         ], [
                 // 'nik.digits' => 'Nomor Induk Kependudukan (NIK) harus terdiri dari 16 digit.',
     ]);
-        $registration_number = $peserta->registration_number ?? Peserta::max('registration_number') + 1;
 
-        $akta = $request->file('akta_kelahiran')->store('public/uploads/akta');
-        $kk = $request->file('kartu_keluarga')->store('public/uploads/kk');
+    do {
+        $registration_number = Peserta::max('registration_number') + 1;
+    } while (Peserta::where('registration_number', $registration_number)->exists()); 
+
+        $akta = $request->file('akta_kelahiran')->storeAs('public/uploads/akta', time() . '_' . $request->file('akta_kelahiran')->getClientOriginalName());
+        $kk = $request->file('kartu_keluarga')->storeAs('public/uploads/kk', time() . '_' . $request->file('kartu_keluarga')->getClientOriginalName());
+
+        // if (Peserta::where('registration_number', $registration_number)->exists()) {
+        //     return redirect()->back()->withErrors('Nomor registrasi sudah ada, silakan coba dengan nomor yang lain.');
+        // }
 
         Peserta::create([
             'name' => $request->name,

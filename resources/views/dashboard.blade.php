@@ -15,12 +15,12 @@
           @if(Auth::check())
             <h2>Selamat Datang di Dashboard, {{ Auth::user()->name }}</h2>
             <p>Anda telah mendaftar sebagai peserta didik baru di Cendekia Primary School.</p>
-
-            
-
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                 @csrf
             </form>
+
+            <a class="btn-getstarted" href="{{ route('ekstrakurikuler.create')}}">Join Ekstrakurikuler</a>            
+
           @else
             <h2>Informasi Seputar Daftar Ulang PPDB 2024</h2>
             <p>Cendekia Primary School</p>
@@ -79,7 +79,56 @@
       <div class="container">
 
         <div class="row justify-content-center">
+          @if(Auth::check())
+          <div class="col-lg-8">
 
+            <div class="faq-container">
+
+              <div class="faq-item faq-active" data-aos="fade-up" data-aos-delay="200">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>Apakah ada kegiatan orientasi atau pengenalan sekolah untuk siswa baru?</h3>
+                <div class="faq-content">
+                  <p style="text-align: justify;">Ya, sekolah kami menyelenggarakan kegiatan orientasi atau pengenalan sekolah untuk siswa baru yang dikenal dengan Masa Pengenalan Lingkungan Sekolah (MPLS). Diantara kegiatan MPLS adalah berkeliling sekolah dipandu oleh wali kelas masing-masing.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>Bagaimana jadwal kegiatan sehari-hari di sekolah?</h3>
+                <div class="faq-content">
+                  <p style="text-align: justify;">Jadwal kegiatan sehari-hari di sekolah kami dimulai pada pukul 07.00 dengan upacara bendera pada hari Senin, dan kegiatan belajar-mengajar dimulai pukul 07.30 hingga pukul 10.00. Setiap hari terdiri dari tiga sesi pelajaran dengan durasi 45 menit per mata pelajaran, diselingi dengan waktu istirahat.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>Apa saja pilihan ekstrakurikuler yang bisa diikuti oleh siswa baru?</h3>
+                <div class="faq-content">
+                  <p style="text-align: justify;">Cendikia Primary School memiliki berbagai pilihan ekstrakurikuler yang bisa diikuti untuk mengembangkan bakat dan minat siswa. Beberapa ekstrakurikuler yang ditawarkan antara lain: Pramuka, Pencak Silat, Tari Tradisional, Paduan Suara, Melukis atau Menggambar, Sepak Bola, Badminton, Dokter Kecil, English Club, dan Paskibra.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>Apakah saya perlu datang langsung ke sekolah untuk verifikasi data setelah pendaftaran ulang?</h3>
+                <div class="faq-content">
+                <p style="text-align: justify;">Di Cendikia Primary School, terdapat aturan yang jelas terkait seragam sekolah. Seragam wajib dikenakan setiap hari selama kegiatan belajar-mengajar berlangsung. Berikut adalah pembagian seragam sesuai dengan hari: 
+                  1. Senin dan Selasa: Siswa mengenakan seragam nasional berupa baju putih dengan bawahan merah.
+                  2. Rabu dan Kamis: Siswa mengenakan seragam batik sekolah yang merupakan seragam khusus dengan motif dan warna yang sudah ditentukan oleh sekolah.
+                  3. Jumat: Siswa mengenakan seragam olahraga berupa kaos dan celana training, karena ada kegiatan olahraga dan senam bersama.
+                  4. Sabtu (Jika ada kegiatan khusus): Siswa mengenakan seragam Pramuka untuk mengikuti kegiatan kepramukaan yang diadakan pada hari Sabtu atau kegiatan lain yang melibatkan seragam Pramuka.
+                  Selain itu, siswa diwajibkan memakai atribut lengkap seperti topi, dasi, dan ikat pinggang sesuai dengan seragam yang dikenakan pada hari tersebut. Seragam harus rapi dan bersih, serta sepatu hitam dengan kaos kaki putih merupakan bagian dari aturan berpakaian.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+            </div>
+
+          </div>
+          @else
           <div class="col-lg-8">
 
             <div class="faq-container">
@@ -128,7 +177,7 @@
             </div>
 
           </div>
-
+          @endif
         </div>
 
       </div>

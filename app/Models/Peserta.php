@@ -9,6 +9,11 @@ class Peserta extends Authenticatable
 {
     use Notifiable;
 
+    public function ekstrakurikulers()
+    {
+        return $this->belongsToMany(Ekstrakurikuler::class, 'ekstrakurikuler_peserta');
+    }
+
     protected $fillable = [
         'name',
         'registration_number',
