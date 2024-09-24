@@ -42,10 +42,10 @@ Primary School adalah website Daftar Ulang Penerimaan Peserta Didik Baru (PPDB) 
   - Nomor Pendaftaran: 911911
 
 ### ERD
-![ERD]()
+![ERD](https://github.com/azmiakh/ujikom/blob/main/ERD.png)
 
 ### UML
-![UML]()
+![UML](https://github.com/azmiakh/ujikom/blob/main/UML.png)
 
 
 ## Teknologi yang Digunakan
