@@ -24,7 +24,6 @@
             <form method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="input-container">
-                    <!-- <label for="name">Nama Lengkap</label> -->
                     <input type="text" id="name" name="name" placeholder="Nama Lengkap" required>
                     @if ($errors->has('name'))
                         <p style="color: red;">{{ $errors->first('name') }}</p>
@@ -32,7 +31,6 @@
                 </div>
 
                 <div class="input-container">
-                    <!-- <label for="registration_number">Nomor Pendaftaran</label> -->
                     <input type="text" id="registration_number" name="registration_number" placeholder="Nomor Pendaftaran" required>
                     @if ($errors->has('registration_number'))
                         <p style="color: red;">{{ $errors->first('registration_number') }}</p>

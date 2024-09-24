@@ -16,7 +16,7 @@ class CreateLogintablesTable extends Migration
         Schema::create('logintables', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('nomor_pendaftaran');
+            $table->string('registration_number');
             $table->timestamps();
         });
     }

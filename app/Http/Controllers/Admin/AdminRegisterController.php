@@ -13,23 +13,18 @@ class AdminRegisterController extends Controller
     //
     public function showRegisterForm()
     {
-        return view('administrator.register'); // Sesuaikan dengan view register yang sudah kamu buat
+        return view('administrator.register'); 
     }
 
-    // Menangani proses register admin
     public function register(Request $request)
     {
-        // Validasi input dari form
         $this->validator($request->all())->validate();
 
-        // Membuat admin baru
         $this->create($request->all());
 
-        // Redirect ke halaman login setelah berhasil register
         return redirect()->route('admin.login')->with('success', 'Registrasi berhasil, silakan login.');
     }
 
-    // Fungsi validasi input
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -40,7 +35,6 @@ class AdminRegisterController extends Controller
         ]);
     }
 
-    // Fungsi untuk menyimpan admin baru ke database
     protected function create(array $data)
     {
         return Admin::create([

@@ -62,11 +62,6 @@
         <label for="nik">Nomor Induk Kependudukan (NIK):</label>
         <input type="text" id="nik" name="nik" required><br><br>
 
-        <!-- <input type="text" id="nik" name="nik" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 16)" maxlength="16" required><br><br>
-        @if ($errors->has('nik'))
-            <span class="text-danger">{{ $errors->first('nik') }}</span>
-        @endif -->
-
         <label for="golongan-darah">Golongan Darah:
             <input type="radio" id="golongan-a" name="golongan_darah" value="A" required> A
             <input type="radio" id="golongan-b" name="golongan_darah" value="B" required> B

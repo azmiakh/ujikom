@@ -1,64 +1,119 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Dokumentasi Proyek Primary School
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Konsep Dari Web Yang Saya Buat
+Primary School adalah website Daftar Ulang Penerimaan Peserta Didik Baru (PPDB) tingkat Sekolah Dasar (SD) yang dirancang untuk memudahkan proses daftar ulang siswa baru secara online. Primary School bertujuan untuk memberikan pengalaman daftar ulang yang lebih cepat, efisien, dan transparan, sehingga seluruh proses penerimaan siswa baru dapat berjalan dengan lancar tanpa harus datang langsung ke sekolah.
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Fitur Yang Tersedia
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Halaman Awal
+- Home
+- About
+- Frequently Asked Questions
+- Contact
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Authentication
+- Register
+- Login
 
-## Learning Laravel
+### Multi User
+#### Admin
+- Mengelola Peserta
+- Melihat semua data
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+#### Peserta
+- Mengakses Halaman Awal tanpa Login
+- Mengakses Halaman Awal setelah Login
+- Login sebagai Peserta
+- Mengisi Formulir Daftar Ulang
+- Print Formulir Daftar Ulang
+- Mengisi Formulir Join Ekstrakurikuler
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### All
+- Login
+- Logout
 
-## Laravel Sponsors
+## Akun Default
+- *Admin*: 
+  - Email: admin@example.com
+  - Password: password123
+- *Peserta*: 
+  - Nama Lengkap: Peserta
+  - Nomor Pendaftaran: 911911
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### ERD
+![ERD]()
 
-### Premium Partners
+### UML
+![UML]()
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
 
-## Contributing
+## Teknologi yang Digunakan
+- Laravel 8
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Tools yang Digunakan
+- Laragon
+- VSCode
+- Navicat
 
-## Code of Conduct
+## Persyaratan untuk Instalasi
+- PHP 7.4.33
+- Web Server
+- Database (MySQL)
+- Web Browser
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Cara Instalasi IceSicle
 
-## Security Vulnerabilities
+### 1. Persyaratan
+Pastikan terlebih dulu Anda memenuhi persyaratan berikut:
+- PHP versi 7.4.33
+- Web Server (Apache)
+- Database (MySQL)
+- Web Browser
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 2. Clone Repository
+Pertama, clone repository dari GitHub dengan perintah berikut:
+bash
+git clone https://github.com/azmiakh/ujikom.git
 
-## License
+### 3. Masuk ke Direktori Proyek
+Setelah clone selesai, masuk ke direktori proyek:
+bash
+cd ujikom
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 4. Instalasi Dependensi
+Instal dependensi menggunakan Composer:
+bash
+composer install
+
+### 5. Salin File .env
+Salin file '.env.example' menjadi '.env':
+bash
+cp .env.example .env
+
+### 6. Atur Kunci Aplikasi
+Generate kunci aplikasi menggunakan Artisan:
+
+bash
+php artisan key:generate
+
+### 7. Konfigurasi Database
+Edit file '.env' dan atur konfigurasi database:
+plaintext
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nama_database
+DB_USERNAME=username_database
+DB_PASSWORD=password_database
+
+### 8. Jalankan Migrations
+Jalankan perintah berikut untuk membuat tabel di database:
+bash
+php artisan migrate
+
+
+### 9. Jalankan Server
+Jalankan server lokal dengan perintah berikut:
+bash
+php artisan serve

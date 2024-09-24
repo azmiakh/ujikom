@@ -52,19 +52,6 @@
           </div>
         </div>
     </section><!-- /About Section -->
-
-    <!-- Features Section -->
-    
-
-    
-
-    <!-- Gallery Section -->
-    
-
-    <!-- Testimonials Section -->
-    
-
-    <!-- Pricing Section -->
     
 
     <!-- Faq Section -->

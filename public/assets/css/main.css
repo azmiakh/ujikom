@@ -905,23 +905,23 @@ section,
 --------------------------------------------------------------*/
 .contact-info-container {
   display: flex;
-  justify-content: space-around; /* Memastikan card tersebar dengan rata */
-  gap: 20px; /* Mengatur jarak antar card */
+  justify-content: space-around; 
+  gap: 20px; 
   padding: 20px;
 }
 
 .contact-info {
   text-align: center;
   background-color: #fff;
-  padding: 20px; /* Ukuran padding tetap */
+  padding: 20px; 
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
   border-radius: 10px;
   width: 100%;
-  max-width: 500px; /* Memperlebar card ke samping */
+  max-width: 500px; 
 }
 
 .icon-box {
-  width: 60px; /* Ukuran icon tetap */
+  width: 60px; 
   height: 60px;
   border: 2px dashed #5777ba;
   border-radius: 50%;
@@ -956,17 +956,17 @@ section,
 }
 .btn-getstarted {
   margin: 0 15px 0 0;
-  padding: 6px 20px; /* Padding untuk mengatur ruang di dalam tombol */
+  padding: 6px 20px; 
   background-color: var(--accent-color);
   color: var(--contrast-color);
   border-radius: 50px;
   font-size: 14px;
   transition: 0.3s;
-  display: inline-block; /* Pastikan tombol menjadi inline dan tidak mengisi lebar penuh */
-  max-width: 200px; /* Membatasi lebar maksimum tombol */
-  text-align: center; /* Mengatur teks di tengah */
-  white-space: nowrap; /* Mencegah teks melompat ke baris baru */
-  width: auto; /* Mengatur lebar tombol agar otomatis sesuai dengan teks */
+  display: inline-block; 
+  max-width: 200px; 
+  text-align: center; 
+  white-space: nowrap; 
+  width: auto; 
 }
 
 .btn-getstarted:hover {

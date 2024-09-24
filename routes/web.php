@@ -68,9 +68,9 @@ Route::middleware('auth')->group(function () {
     
 });
 
-Route::get('/admin/tables/ekstrakurikuler/create', [EkstrakurikulerController::class, 'create'])->name('ekstrakurikuler.create');
+Route::get('/ekstrakurikuler', [EkstrakurikulerController::class, 'create'])->name('ekstrakurikuler.create');
 
-Route::post('/admin/tables/ekstrakurikuler/create', [EkstrakurikulerController::class, 'store'])->name('ekstrakurikuler.store');
+Route::post('/ekstrakurikuler', [EkstrakurikulerController::class, 'store'])->name('ekstrakurikuler.store');
 
 Route::get('/admin/tables/ekstrakurikuler', [EkstrakurikulerController::class, 'index'])->name('admin.ekstrakurikuler');
 Route::delete('/admin/tables/ekstrakurikuler/{id}', [EkstrakurikulerController::class, 'destroy'])->name('admin.ekstrakurikuler.destroy');

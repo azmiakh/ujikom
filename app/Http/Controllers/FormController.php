@@ -12,11 +12,10 @@ class FormController extends Controller
     public function showForm()
     {
         $peserta = Auth::user();
-        return view('form', compact('peserta')); // ganti 'form' dengan nama file blade view form Anda
+        return view('form', compact('peserta')); 
     }
     public function submitForm(Request $request)
     {
-        // Validasi data form
         $request->validate([
             'name' => 'required|string',
             'tanggal_lahir' => 'required|date',
@@ -24,15 +23,13 @@ class FormController extends Controller
             'agama' => 'required|string',
             'alamat_lengkap' => 'required|string',
             'nik' => 'required|integer',
-            // 'nik' => 'required|digits:16',
             'golongan_darah' => 'required',
             'anak_ke' => 'required|integer',
             'total_saudara' => 'required|integer',
             'akta_kelahiran' => 'required|image',
             'kartu_keluarga' => 'file|mimes:doc,docx,pdf',
-        ], [
-                // 'nik.digits' => 'Nomor Induk Kependudukan (NIK) harus terdiri dari 16 digit.',
-    ]);
+        ], 
+    );
 
     do {
         $registration_number = Peserta::max('registration_number') + 1;
@@ -40,10 +37,6 @@ class FormController extends Controller
 
         $akta = $request->file('akta_kelahiran')->storeAs('public/uploads/akta', time() . '_' . $request->file('akta_kelahiran')->getClientOriginalName());
         $kk = $request->file('kartu_keluarga')->storeAs('public/uploads/kk', time() . '_' . $request->file('kartu_keluarga')->getClientOriginalName());
-
-        // if (Peserta::where('registration_number', $registration_number)->exists()) {
-        //     return redirect()->back()->withErrors('Nomor registrasi sudah ada, silakan coba dengan nomor yang lain.');
-        // }
 
         Peserta::create([
             'name' => $request->name,

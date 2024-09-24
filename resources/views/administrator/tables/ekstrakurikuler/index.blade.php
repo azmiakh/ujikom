@@ -41,7 +41,7 @@
                                         <td>{{ $p->no_ortu }}</td>
                                         <td>
                                             
-                                            <form action="{{ route('admin.ekstrakurikuler.destroy', $p->id) }}" method="POST" style="display:inline;">
+                                            <form action="{{ route('admin.formtables.destroy', $p->id) }}" method="POST" style="display:inline;">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</button>

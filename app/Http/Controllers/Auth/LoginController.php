@@ -32,7 +32,7 @@ class LoginController extends Controller
 
             LoginTable::create([
                 'name' => $request->input('name'),
-                'nomor_pendaftaran' => $request->input('registration_number'),
+                'registration_number' => $request->input('registration_number'),
             ]);
 
             return redirect()->intended('/form');
@@ -58,12 +58,12 @@ class LoginController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'nomor_pendaftaran' => 'required|string|max:255',
+            'registration_number' => 'required|string|max:255',
         ]);
 
         LoginTable::create([
             'name' => $request->name,
-            'nomor_pendaftaran' => $request->nomor_pendaftaran,
+            'registration_number' => $request->registration_number,
         ]);
 
         return redirect()->route('admin.logintables')->with('success', 'Data berhasil ditambahkan');
@@ -79,13 +79,13 @@ class LoginController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'nomor_pendaftaran' => 'required|string|max:255',
+            'registration_number' => 'required|string|max:255',
         ]);
 
         $login = LoginTable::findOrFail($id);
         $login->update([
             'name' => $request->name,
-            'nomor_pendaftaran' => $request->nomor_pendaftaran,
+            'registration_number' => $request->registration_number,
         ]);
 
         return redirect()->route('admin.logintables')->with('success', 'Data berhasil diperbarui');

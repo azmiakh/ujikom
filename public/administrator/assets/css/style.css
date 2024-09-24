@@ -1055,16 +1055,16 @@ p, label {
 
 .card-body {
   padding: 20px;
-  min-height: auto; /* Otomatis mengikuti konten */
-  background-color: white; /* Pastikan latar belakang putih */
-  height: auto; /* Sesuaikan tinggi konten */
-  overflow-x: auto; /* Pastikan tabel bisa di-scroll horizontal jika diperlukan */
+  min-height: auto; 
+  background-color: white; 
+  height: auto; 
+  overflow-x: auto; 
   overflow-y: auto;
 }
 
 .table th, .table td {
   width: 150px;
-  white-space: normal; /* Pastikan konten tidak dipotong */
-  word-wrap: break-word; /* Memastikan teks panjang di-wrap */
+  white-space: normal;
+  word-wrap: break-word; 
 }
 

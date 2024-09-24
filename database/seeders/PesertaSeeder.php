@@ -17,8 +17,8 @@ class PesertaSeeder extends Seeder
         //
         Peserta::create(
         [
-            'name' => 'Mikha',
-            'registration_number' => '111111'
+            'name' => 'Peserta',
+            'registration_number' => '911911'
         ]
     );
 

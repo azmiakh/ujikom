@@ -24,8 +24,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="nomor_pendaftaran">Nomor Pendaftaran:</label>
-                    <input type="text" class="form-control" id="nomor_pendaftaran" name="nomor_pendaftaran" value="{{ $login->nomor_pendaftaran }}" required>
+                    <label for="registration_number">Nomor Pendaftaran:</label>
+                    <input type="text" class="form-control" id="registration_number" name="registration_number" value="{{ $login->registration_number }}" required>
                 </div>
                 <br>
                 <button type="submit" class="btn btn-primary">Update</button>

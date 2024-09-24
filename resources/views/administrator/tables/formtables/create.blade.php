@@ -1,116 +1,49 @@
 @extends('administrator/layouts/app')
 
 @section('content')
-
 <style>
-/* Mengatur font untuk keseluruhan form */
-body {
-    font-family: 'Montserrat', sans-serif;
-}
-
-/* Mengatur margin untuk bagian card */
 .card {
-    margin: 20px;
+    width: 100%; 
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    border-radius: 0; 
 }
 
-/* Mengatur lebar form agar tidak terlalu melebar */
-form {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Mengatur tampilan input, select, dan textarea agar lebih rapi */
-input[type="text"], input[type="date"], input[type="number"], select, textarea, input[type="file"] {
+input[type="text"], input[type="number"], input[type="date"], select, textarea {
     width: 100%;
     padding: 10px;
-    margin: 8px 0;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 0;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
+    font-size: 14px;
 }
 
-/* Mengatur label agar lebih menonjol */
 label {
-    font-weight: bold;
-    margin-top: 10px;
     display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
 }
 
-/* Mengatur tampilan button */
 button[type="submit"] {
+    width: 100%;
+    padding: 10px;
     background-color: #007bff;
     color: white;
-    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 0;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+    font-size: 14px;
 }
 
-/* Mengubah warna button saat dihover */
 button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-/* Mengatur margin dan tampilan radio button */
-input[type="radio"] {
-    margin-right: 10px;
-}
-
-/* Mengatur margin untuk tiap elemen form */
-.form-group {
-    margin-bottom: 15px;
-}
-
-/* Mengatur tampilan input grup untuk anak ke-berapa */
-.input-group {
-    display: flex;
-    align-items: center;
-}
-
-.input-group input {
-    width: 100px;
-    margin-right: 10px;
-}
-
-.input-group span {
-    margin-right: 10px;
-}
-
-/* Mengatur pratinjau gambar akta kelahiran */
-#akta-preview {
-    max-width: 100%;
-    height: auto;
-    display: none;
-    margin-top: 10px;
-}
-
-/* Mengatur ukuran gambar preview */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Responsif: Mengatur lebar maksimal elemen pada layar kecil */
-@media (max-width: 768px) {
-    form {
-        max-width: 100%;
-    }
-
-    .input-group {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .input-group input {
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
+body {
+    padding: 0;
+    margin: 0;
 }
 </style>
 
@@ -196,10 +129,6 @@ img {
                     <label for="kk">Kartu Keluarga:</label>
                     <input type="file" id="kk" name="kartu_keluarga" accept=".doc,.docx,.pdf" required>
                 </div>
-                <!-- <input type="text" id="nik" name="nik" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 16)" maxlength="16" required><br><br>
-                @if ($errors->has('nik'))
-                    <span class="text-danger">{{ $errors->first('nik') }}</span>
-                @endif -->
                 <br>
                 <button type="submit" class="btn btn-primary">Tambah</button>
             </form>
@@ -207,4 +136,37 @@ img {
         </div>
     </div>
 </main>
+<script>
+    function previewImage(event) {
+        var input = event.target;
+        var reader = new FileReader();
+
+        reader.onload = function(){
+            var imgElement = document.getElementById('akta-preview');
+            imgElement.src = reader.result;
+            imgElement.style.display = 'block';
+        }
+
+        if (input.files && input.files[0]) {
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    function printForm(event) {
+        event.preventDefault();
+        window.print();
+
+        setTimeout(function() {
+            event.target.submit();
+        }, 1000);
+    }
+    function validateForm() {
+        var nikInput = document.getElementById('nik').value;
+        if (nikInput.length !== 16) {
+            alert('NIK harus berisi tepat 16 digit.');
+            return false;
+        }
+        return true;
+    }
+</script>
 @endsection

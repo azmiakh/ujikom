@@ -13,6 +13,6 @@ class LoginTable extends Model
 
     protected $fillable = [
         'name',
-        'nomor_pendaftaran',
+        'registration_number',
     ];
 }

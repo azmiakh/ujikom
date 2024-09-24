@@ -51,7 +51,11 @@
             <option value="Pramuka">Pramuka</option>
             <option value="Pencak Silat">Pencak Silat</option>
             <option value="Tari Tradisional">Tari Tradisional</option>
-            <option value="Paduan Suara">Paduan Suara</option>
+            <option value="Paduan Suara">Sepak Bola</option>
+            <option value="Paduan Suara">Badminton</option>
+            <option value="Paduan Suara">Dokter Kecil</option>
+            <option value="Paduan Suara">English Club</option>
+            <option value="Paduan Suara">Paskibra</option>
         </select><br><br>
 
         <label for="no_ortu">No. Telepon Orang Tua:</label>
