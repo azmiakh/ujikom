@@ -73,18 +73,16 @@ Pastikan terlebih dulu Anda memenuhi persyaratan berikut:
 
 ### 2. Clone Repository
 Pertama, clone repository dari GitHub dengan perintah berikut:
-bash
+```bash
 git clone https://github.com/azmiakh/ujikom.git
 
 ### 3. Masuk ke Direktori Proyek
 Setelah clone selesai, masuk ke direktori proyek:
-bash
-cd ujikom
+bash cd ujikom
 
 ### 4. Instalasi Dependensi
 Instal dependensi menggunakan Composer:
-bash
-composer install
+bash composer install
 
 ### 5. Salin File .env
 Salin file '.env.example' menjadi '.env':
