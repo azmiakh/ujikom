@@ -99,14 +99,14 @@ php artisan key:generate
 ```
 ### 7. Konfigurasi Database
 Edit file '.env' dan atur konfigurasi database:
-plaintext
+```plaintext
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=nama_database
 DB_USERNAME=username_database
 DB_PASSWORD=password_database
-
+```
 ### 8. Jalankan Migrations
 Jalankan perintah berikut untuk membuat tabel di database:
 ```bash
